@@ -285,6 +285,7 @@
 | 0x08   | over             | ... value1 value2 &rarr; ... value1 value2 value1           |
 | 0x04   | pop              | ... value &rarr; ...                                        |
 | 0x05   | pop2             | ... value1 value2 &rarr; ...                                |
-| 0x09   | rot              | ... value1 value2 value3 &rarr; ... value2 value3 value1    |
+| 0x09   | rot              | ... value1 value2 value3 &rarr; ... value3 value1 value2    |
+| 0x15   | rot4             | ... val1 val2 val3 val4 &rarr; ... val4 val1 val2 val3      |
 | 0x03   | swap             | ... value1 value2 &rarr; ... value2 value1                  |
 | 0x0B   | tuck             | ... value1 value2 &rarr; ... value2 value1 value2           |

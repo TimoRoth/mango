@@ -987,7 +987,17 @@ STLOC_X64: // value ... -> ...
     NEXT;
   } while (0);
 
-UNUSED21:
+ROT4: // value1 value2 value3 value4 ... -> value4 value1 value2 value3 ...
+  do {
+    uint32_t tmp = sp[0].u32;
+    sp[0].u32 = sp[1].u32;
+    sp[1].u32 = sp[2].u32;
+    sp[2].u32 = sp[3].u32;
+    sp[3].u32 = tmp;
+    ip++;
+    NEXT;
+  } while (0);
+
 UNUSED22:
 UNUSED23:
   INVALID;

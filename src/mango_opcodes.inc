@@ -53,7 +53,7 @@ OPCODE(LDLOCA,          "ldloca",           0,      1,      1,      0x12)
 OPCODE(STLOC_X32,       "stloc.x32",        1,      0,      1,      0x13)
 OPCODE(STLOC_X64,       "stloc.x64",        2,      0,      1,      0x14)
 
-OPCODE(UNUSED21,        "unused",           0,      0,      0,      0x15)
+OPCODE(ROT4,            "rot4",             4,      4,      0,      0x15)
 OPCODE(UNUSED22,        "unused",           0,      0,      0,      0x16)
 OPCODE(UNUSED23,        "unused",           0,      0,      0,      0x17)
 
