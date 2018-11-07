@@ -192,6 +192,7 @@
 | 0x47   | neg.i32          | ... value &rarr; ... result                                 |
 | 0x97   | neg.i64          | ... value &rarr; ... result                                 |
 | 0x61   | newarr           | ... length &rarr; ... length array                          |
+| 0x64   | makearr          | ... &rarr; ... length array                                 |
 | 0x60   | newobj           | ... &rarr; ... address                                      |
 | 0x00   | nop              | ... &rarr; ...                                              |
 | 0x4E   | not.i32          | ... value &rarr; ... result                                 |

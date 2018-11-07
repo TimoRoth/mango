@@ -1401,7 +1401,33 @@ SLICE2: // length' start array length ... -> array length' ...
     NEXT;
   } while (0);
 
-UNUSED100:
+MAKEARR:
+  do {
+    uint32_t size = FETCH(ip + 1, u16);
+    uint32_t length = FETCH(ip + 3, u16);
+    RETURN_IF(MANGO_E_ARGUMENT, size != 1 && size != 2 && size != 4);
+    void *array = mango_heap_alloc(vm, length, size, __alignof(stackval), 0);
+    RETURN_IF(MANGO_E_OUT_OF_MEMORY, !array);
+    sp -= 2;
+    sp[0].ref = void_as_ref(vm, array);
+    sp[1].u32 = length;
+    ip += 5;
+    for (uint32_t i = 0; i < length; i++) {
+      switch (size) {
+      case 1:
+        ((uint8_t*)array)[i] = FETCH(ip, u8);
+        break;
+      case 2:
+        ((uint16_t*)array)[i] = FETCH(ip, u16);
+        break;
+      case 4:
+        ((uint32_t*)array)[i] = FETCH(ip, u32);
+        break;
+      }
+      ip += size;
+    }
+  } while (0);
+
 UNUSED101:
 UNUSED102:
 UNUSED103:
